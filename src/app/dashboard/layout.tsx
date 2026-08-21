@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { createClient } from '@/lib/supabase-server'
+import LogoutButton from './logout-button'
 
 const navItems = [
   { href: '/dashboard', label: 'Dashboard', icon: '📊' },
@@ -9,11 +11,16 @@ const navItems = [
   { href: '/settings', label: 'Settings', icon: '⚙️' },
 ]
 
-export default function DashboardLayout({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  const username = user?.user_metadata?.username || user?.email?.split('@')[0] || 'User'
+
   return (
     <div className="min-h-screen bg-gray-950 flex">
       {/* Sidebar */}
@@ -42,11 +49,18 @@ export default function DashboardLayout({
           ))}
         </nav>
 
-        {/* Footer */}
-        <div className="p-4 border-t border-gray-800">
-          <div className="text-xs text-gray-600">
-            MeowAntiCheat v1.0.0
+        {/* User + Logout */}
+        <div className="p-4 border-t border-gray-800 space-y-3">
+          <div className="flex items-center gap-3 px-2">
+            <div className="w-8 h-8 rounded-full bg-purple-600/30 flex items-center justify-center text-sm font-bold text-purple-400">
+              {username[0].toUpperCase()}
+            </div>
+            <div className="min-w-0">
+              <p className="text-sm font-medium truncate">{username}</p>
+              <p className="text-xs text-gray-500 truncate">{user?.email}</p>
+            </div>
           </div>
+          <LogoutButton />
         </div>
       </aside>
 

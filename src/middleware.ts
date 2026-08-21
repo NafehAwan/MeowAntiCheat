@@ -29,13 +29,25 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // Protected routes
+  const { pathname } = request.nextUrl
+
+  // Protected routes — redirect to login if not authenticated
   const protectedPaths = ['/dashboard', '/servers', '/players', '/incidents', '/leaderboard', '/settings']
-  const isProtected = protectedPaths.some(path => request.nextUrl.pathname.startsWith(path))
+  const isProtected = protectedPaths.some(path => pathname.startsWith(path))
 
   if (isProtected && !user) {
     const url = request.nextUrl.clone()
     url.pathname = '/auth/login'
+    return NextResponse.redirect(url)
+  }
+
+  // Auth pages — redirect to dashboard if already logged in
+  const authPaths = ['/auth/login', '/auth/signup']
+  const isAuth = authPaths.some(path => pathname.startsWith(path))
+
+  if (isAuth && user) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/dashboard'
     return NextResponse.redirect(url)
   }
 
@@ -44,6 +56,6 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+    '/((?!_next/static|_next/image|favicon.ico|api/.*|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
   ],
 }
