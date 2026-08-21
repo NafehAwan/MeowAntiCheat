@@ -1,11 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase'
-import crypto from 'crypto'
+import { createClient } from '@/lib/supabase-server'
 
 // POST /api/v1/servers - Create server
 export async function POST(request: NextRequest) {
   try {
-    const supabase = getSupabaseAdmin()
+    const supabase = await createClient()
 
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
@@ -29,15 +28,15 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json({ status: 'ok', server })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
 
 // GET /api/v1/servers - List user's servers
-export async function GET(request: NextRequest) {
+export async function GET() {
   try {
-    const supabase = getSupabaseAdmin()
+    const supabase = await createClient()
 
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
@@ -55,7 +54,7 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json({ servers })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
@@ -63,7 +62,7 @@ export async function GET(request: NextRequest) {
 // DELETE /api/v1/servers - Unlink server
 export async function DELETE(request: NextRequest) {
   try {
-    const supabase = getSupabaseAdmin()
+    const supabase = await createClient()
 
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
@@ -87,7 +86,7 @@ export async function DELETE(request: NextRequest) {
     }
 
     return NextResponse.json({ status: 'ok' })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }

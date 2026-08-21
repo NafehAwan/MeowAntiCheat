@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getSupabaseAdmin } from '@/lib/supabase'
+import { createClient } from '@/lib/supabase-server'
 
 // POST /api/v1/link/initiate - Dashboard owner initiates link
 export async function POST(request: NextRequest) {
   try {
-    const supabase = getSupabaseAdmin()
+    const supabase = await createClient()
 
-    // Get authenticated user
     const { data: { user }, error: authError } = await supabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
@@ -14,7 +13,6 @@ export async function POST(request: NextRequest) {
 
     const { server_id, handle } = await request.json()
 
-    // Verify server belongs to user
     const { data: server, error: serverError } = await supabase
       .from('servers')
       .select('*')
@@ -30,7 +28,6 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Server already bound' }, { status: 409 })
     }
 
-    // Check if handle exists and is not consumed
     const { data: challenge, error: challengeError } = await supabase
       .from('link_challenges')
       .select('*')
@@ -43,10 +40,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Invalid or expired handle' }, { status: 404 })
     }
 
-    // Generate confirmation code
     const code = generateCode()
 
-    // Store the challenge with the code
     await supabase
       .from('link_challenges')
       .update({ code, server_id: server_id })
@@ -57,7 +52,7 @@ export async function POST(request: NextRequest) {
       code,
       message: 'Now run /meowac confirm ' + code + ' in-game'
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
