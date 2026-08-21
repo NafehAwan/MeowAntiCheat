@@ -108,6 +108,7 @@ alter table servers enable row level security;
 alter table players enable row level security;
 alter table incidents enable row level security;
 alter table heartbeats enable row level security;
+alter table link_challenges enable row level security;
 
 -- Owners can manage their servers
 create policy "Owners can view their servers" on servers
@@ -133,6 +134,22 @@ create policy "Auth users can view incidents" on incidents
 -- Heartbeats readable by authenticated users
 create policy "Auth users can view heartbeats" on heartbeats
   for select using (auth.role() = 'authenticated');
+
+-- Link challenges: owners can create and view for their servers
+create policy "Owners can insert link challenges" on link_challenges
+  for insert with check (
+    exists (select 1 from servers where servers.id = link_challenges.server_id and servers.owner_id = auth.uid())
+  );
+
+create policy "Owners can view link challenges" on link_challenges
+  for select using (
+    exists (select 1 from servers where servers.id = link_challenges.server_id and servers.owner_id = auth.uid())
+  );
+
+create policy "Owners can update link challenges" on link_challenges
+  for update using (
+    exists (select 1 from servers where servers.id = link_challenges.server_id and servers.owner_id = auth.uid())
+  );
 
 -- Functions
 create or replace function update_updated_at()
