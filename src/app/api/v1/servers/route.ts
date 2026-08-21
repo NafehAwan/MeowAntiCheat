@@ -1,25 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
+import { getSupabaseAdmin } from '@/lib/supabase'
 
 // POST /api/v1/servers - Create server
 export async function POST(request: NextRequest) {
   try {
-    const supabase = await createClient()
-
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const userSupabase = await createClient()
+    const { data: { user }, error: authError } = await userSupabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const { name, ip } = await request.json()
+    const supabase = getSupabaseAdmin()
 
     const { data: server, error } = await supabase
       .from('servers')
-      .insert({
-        owner_id: user.id,
-        name,
-        ip
-      })
+      .insert({ owner_id: user.id, name, ip })
       .select()
       .single()
 
@@ -36,12 +33,13 @@ export async function POST(request: NextRequest) {
 // GET /api/v1/servers - List user's servers
 export async function GET() {
   try {
-    const supabase = await createClient()
-
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const userSupabase = await createClient()
+    const { data: { user }, error: authError } = await userSupabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
+
+    const supabase = getSupabaseAdmin()
 
     const { data: servers, error } = await supabase
       .from('servers')
@@ -62,14 +60,14 @@ export async function GET() {
 // DELETE /api/v1/servers - Unlink server
 export async function DELETE(request: NextRequest) {
   try {
-    const supabase = await createClient()
-
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    const userSupabase = await createClient()
+    const { data: { user }, error: authError } = await userSupabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const { server_id } = await request.json()
+    const supabase = getSupabaseAdmin()
 
     const { error } = await supabase
       .from('servers')

@@ -1,18 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { getSupabaseAdmin } from '@/lib/supabase'
 import { createClient } from '@/lib/supabase-server'
 import crypto from 'crypto'
 
 // POST /api/v1/link/initiate - Generate a link code for a server
 export async function POST(request: NextRequest) {
   try {
-    const supabase = await createClient()
-
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
+    // Use cookie client to verify user session
+    const userSupabase = await createClient()
+    const { data: { user }, error: authError } = await userSupabase.auth.getUser()
     if (authError || !user) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     const { server_id } = await request.json()
+
+    // Use admin client for DB operations (bypasses RLS)
+    const supabase = getSupabaseAdmin()
 
     // Verify server belongs to user
     const { data: server, error: serverError } = await supabase
@@ -41,7 +45,7 @@ export async function POST(request: NextRequest) {
     const code = generateCode()
 
     // Store the challenge
-    const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString() // 10 min
+    const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString()
     const { error: insertError } = await supabase
       .from('link_challenges')
       .insert({
@@ -52,7 +56,7 @@ export async function POST(request: NextRequest) {
       })
 
     if (insertError) {
-      return NextResponse.json({ error: 'Failed to create challenge' }, { status: 500 })
+      return NextResponse.json({ error: insertError.message }, { status: 500 })
     }
 
     return NextResponse.json({
@@ -65,7 +69,6 @@ export async function POST(request: NextRequest) {
 }
 
 function generateCode(): string {
-  // Format: XXXX-XXXX (8 chars with dash)
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
   let code = ''
   for (let i = 0; i < 8; i++) {
