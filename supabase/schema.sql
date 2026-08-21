@@ -22,9 +22,10 @@ create table if not exists servers (
 
 -- Link challenges (temporary codes for linking)
 create table if not exists link_challenges (
-  handle text primary key,
-  code text not null,
+  id uuid primary key default uuid_generate_v4(),
+  code text unique not null,
   server_id uuid references servers(id) on delete cascade,
+  consumed boolean default false,
   expires_at timestamptz not null,
   created_at timestamptz default now()
 );
@@ -99,6 +100,7 @@ create index if not exists idx_players_uuid on players(uuid);
 create index if not exists idx_players_suspicion on players(suspicion_score desc);
 create index if not exists idx_heartbeats_server on heartbeats(server_id);
 create index if not exists idx_servers_owner on servers(owner_id);
+create index if not exists idx_link_challenges_code on link_challenges(code);
 create index if not exists idx_link_challenges_expires on link_challenges(expires_at);
 
 -- Row Level Security

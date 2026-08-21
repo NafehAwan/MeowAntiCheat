@@ -7,7 +7,6 @@ interface Server {
   name: string
   ip: string
   plugin_bound: boolean
-  handle: string | null
   created_at: string
 }
 
@@ -19,12 +18,12 @@ export default function ServersPage() {
   const [selectedServer, setSelectedServer] = useState<Server | null>(null)
   const [serverName, setServerName] = useState('')
   const [serverIp, setServerIp] = useState('')
-  const [handleInput, setHandleInput] = useState('')
   const [linkCode, setLinkCode] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [creating, setCreating] = useState(false)
-  const [linking, setLinking] = useState(false)
+  const [generating, setGenerating] = useState(false)
+  const [copied, setCopied] = useState(false)
 
   useEffect(() => {
     fetchServers()
@@ -72,59 +71,40 @@ export default function ServersPage() {
     }
   }
 
-  function openLinkModal(server: Server) {
+  async function openLinkModal(server: Server) {
     setSelectedServer(server)
-    setHandleInput('')
     setLinkCode('')
     setError('')
     setSuccess('')
+    setCopied(false)
+    setGenerating(true)
     setShowLinkModal(true)
-  }
-
-  async function handleLink(e: React.FormEvent) {
-    e.preventDefault()
-    setError('')
-    setLinking(true)
 
     try {
-      if (!linkCode) {
-        // Step 1: send handle, get code
-        const res = await fetch('/api/v1/link/initiate', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ server_id: selectedServer?.id, handle: handleInput }),
-        })
+      const res = await fetch('/api/v1/link/initiate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ server_id: server.id }),
+      })
 
-        const data = await res.json()
-        if (!res.ok) {
-          setError(data.error || 'Invalid handle')
-          return
-        }
-
-        setLinkCode(data.code)
-      } else {
-        // Step 2: confirm with code
-        const res = await fetch('/api/v1/link/confirm', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ handle: handleInput, code: linkCode }),
-        })
-
-        const data = await res.json()
-        if (!res.ok) {
-          setError(data.error || 'Confirmation failed')
-          return
-        }
-
-        setSuccess('Server linked successfully!')
-        setShowLinkModal(false)
-        fetchServers()
+      const data = await res.json()
+      if (!res.ok) {
+        setError(data.error || 'Failed to generate code')
+        return
       }
+
+      setLinkCode(data.code)
     } catch {
       setError('Network error')
     } finally {
-      setLinking(false)
+      setGenerating(false)
     }
+  }
+
+  function copyCode() {
+    navigator.clipboard.writeText(linkCode)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
   }
 
   async function handleUnlink(serverId: string) {
@@ -160,7 +140,6 @@ export default function ServersPage() {
         </div>
       )}
 
-      {/* Server List */}
       {loading ? (
         <div className="text-center py-12 text-gray-500">Loading...</div>
       ) : servers.length === 0 ? (
@@ -214,19 +193,17 @@ export default function ServersPage() {
         </div>
       )}
 
-      {/* How to Link */}
       <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
         <h3 className="text-lg font-semibold mb-4">How to Link Your Server</h3>
         <div className="space-y-4 text-sm text-gray-400">
           <Step num={1} text="Add your server in the dashboard" />
-          <Step num={2} text="Install the MeowAntiCheat plugin on your Paper server" />
-          <Step num={3} text='Run /meowac link in-game to get a handle ID' />
-          <Step num={4} text="Click 'Link Plugin' and paste the handle ID" />
-          <Step num={5} text='Copy the confirmation code and run /meowac confirm CODE in-game' />
+          <Step num={2} text="Install MeowAntiCheat plugin on your Paper server" />
+          <Step num={3} text='Click "Link Plugin" — copy the code shown' />
+          <Step num={4} text='Run /meowac confirm CODE in-game' />
+          <Step num={5} text="Done! Plugin is now connected." />
         </div>
       </div>
 
-      {/* Add Server Modal */}
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
           <h3 className="text-lg font-semibold mb-4">Add Server</h3>
@@ -278,58 +255,46 @@ export default function ServersPage() {
         </Modal>
       )}
 
-      {/* Link Plugin Modal */}
       {showLinkModal && selectedServer && (
         <Modal onClose={() => setShowLinkModal(false)}>
           <h3 className="text-lg font-semibold mb-2">Link Plugin — {selectedServer.name}</h3>
           <p className="text-sm text-gray-400 mb-4">
-            {linkCode
-              ? 'Run this command in-game to complete the link:'
-              : 'Paste the handle ID from /meowac link in-game:'}
+            Copy this code and run it in-game:
           </p>
           {error && (
             <div className="mb-4 p-3 bg-red-500/10 border border-red-500/30 rounded-lg text-red-400 text-sm text-center">
               {error}
             </div>
           )}
-          <form onSubmit={handleLink} className="space-y-4">
-            {!linkCode ? (
-              <div>
-                <label className="block text-sm text-gray-400 mb-1">Handle ID</label>
-                <input
-                  type="text"
-                  value={handleInput}
-                  onChange={e => setHandleInput(e.target.value)}
-                  className="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-purple-500 transition font-mono"
-                  placeholder="e.g. A1B2C3D4"
-                  required
-                />
-              </div>
-            ) : (
+          {generating ? (
+            <div className="text-center py-8 text-gray-500">Generating code...</div>
+          ) : linkCode ? (
+            <div className="space-y-4">
               <div className="p-4 bg-gray-800 rounded-lg text-center">
-                <p className="text-xs text-gray-500 mb-2">Run this in-game:</p>
-                <p className="font-mono text-purple-400 text-lg">
+                <p className="text-xs text-gray-500 mb-2">Run this command in-game:</p>
+                <p className="font-mono text-purple-400 text-xl tracking-wider">
                   /meowac confirm {linkCode}
                 </p>
               </div>
-            )}
-            <div className="flex gap-3">
               <button
-                type="button"
-                onClick={() => setShowLinkModal(false)}
-                className="flex-1 py-3 border border-gray-700 hover:border-gray-500 rounded-lg transition"
+                onClick={copyCode}
+                className="w-full py-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-lg text-sm transition"
               >
-                Cancel
+                {copied ? 'Copied!' : 'Copy Command'}
               </button>
-              <button
-                type="submit"
-                disabled={linking}
-                className="flex-1 py-3 bg-purple-600 hover:bg-purple-500 disabled:opacity-50 rounded-lg font-semibold transition"
-              >
-                {linking ? 'Processing...' : linkCode ? 'Confirm Link' : 'Submit Handle'}
-              </button>
+              <p className="text-xs text-gray-500 text-center">
+                Code expires in 10 minutes
+              </p>
             </div>
-          </form>
+          ) : null}
+          <div className="mt-4">
+            <button
+              onClick={() => setShowLinkModal(false)}
+              className="w-full py-3 border border-gray-700 hover:border-gray-500 rounded-lg transition"
+            >
+              Close
+            </button>
+          </div>
         </Modal>
       )}
     </div>

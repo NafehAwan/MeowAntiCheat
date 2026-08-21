@@ -1,7 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase-server'
+import crypto from 'crypto'
 
-// POST /api/v1/link/initiate - Dashboard owner initiates link
+// POST /api/v1/link/initiate - Generate a link code for a server
 export async function POST(request: NextRequest) {
   try {
     const supabase = await createClient()
@@ -11,8 +12,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    const { server_id, handle } = await request.json()
+    const { server_id } = await request.json()
 
+    // Verify server belongs to user
     const { data: server, error: serverError } = await supabase
       .from('servers')
       .select('*')
@@ -25,32 +27,37 @@ export async function POST(request: NextRequest) {
     }
 
     if (server.plugin_bound) {
-      return NextResponse.json({ error: 'Server already bound' }, { status: 409 })
+      return NextResponse.json({ error: 'Server already linked' }, { status: 409 })
     }
 
-    const { data: challenge, error: challengeError } = await supabase
-      .from('link_challenges')
-      .select('*')
-      .eq('handle', handle)
-      .eq('consumed', false)
-      .gt('expires_at', new Date().toISOString())
-      .single()
-
-    if (challengeError || !challenge) {
-      return NextResponse.json({ error: 'Invalid or expired handle' }, { status: 404 })
-    }
-
-    const code = generateCode()
-
+    // Delete any old pending challenges for this server
     await supabase
       .from('link_challenges')
-      .update({ code, server_id: server_id })
-      .eq('handle', handle)
+      .delete()
+      .eq('server_id', server_id)
+      .eq('consumed', false)
+
+    // Generate a short code
+    const code = generateCode()
+
+    // Store the challenge
+    const expiresAt = new Date(Date.now() + 10 * 60 * 1000).toISOString() // 10 min
+    const { error: insertError } = await supabase
+      .from('link_challenges')
+      .insert({
+        code,
+        server_id,
+        consumed: false,
+        expires_at: expiresAt,
+      })
+
+    if (insertError) {
+      return NextResponse.json({ error: 'Failed to create challenge' }, { status: 500 })
+    }
 
     return NextResponse.json({
       status: 'ok',
       code,
-      message: 'Now run /meowac confirm ' + code + ' in-game'
     })
   } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
@@ -58,11 +65,12 @@ export async function POST(request: NextRequest) {
 }
 
 function generateCode(): string {
+  // Format: XXXX-XXXX (8 chars with dash)
   const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789'
   let code = ''
   for (let i = 0; i < 8; i++) {
     if (i === 4) code += '-'
-    code += chars[Math.floor(Math.random() * chars.length)]
+    code += chars[crypto.randomInt(chars.length)]
   }
   return code
 }

@@ -2,27 +2,28 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseAdmin } from '@/lib/supabase'
 import crypto from 'crypto'
 
-// POST /api/v1/link/confirm - Plugin confirms link
+// POST /api/v1/link/confirm - Plugin confirms link via /meowac confirm CODE
 export async function POST(request: NextRequest) {
   try {
-    const supabase = getSupabaseAdmin()
-    const { handle, code } = await request.json()
+    const { code } = await request.json()
 
-    if (!handle || !code) {
-      return NextResponse.json({ error: 'Handle and code required' }, { status: 400 })
+    if (!code) {
+      return NextResponse.json({ error: 'Code required' }, { status: 400 })
     }
 
-    // Find the challenge
+    const supabase = getSupabaseAdmin()
+
+    // Find matching pending challenge
     const { data: challenge, error: challengeError } = await supabase
       .from('link_challenges')
       .select('*')
-      .eq('handle', handle)
-      .eq('code', code)
+      .eq('code', code.toUpperCase().trim())
+      .eq('consumed', false)
       .gt('expires_at', new Date().toISOString())
       .single()
 
     if (challengeError || !challenge) {
-      return NextResponse.json({ error: 'Invalid code or expired' }, { status: 401 })
+      return NextResponse.json({ error: 'Invalid or expired code' }, { status: 404 })
     }
 
     // Get server
@@ -37,7 +38,7 @@ export async function POST(request: NextRequest) {
     }
 
     if (server.plugin_bound) {
-      return NextResponse.json({ error: 'Server already bound' }, { status: 409 })
+      return NextResponse.json({ error: 'Server already linked' }, { status: 409 })
     }
 
     // Generate server key
@@ -58,19 +59,18 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to bind server' }, { status: 500 })
     }
 
-    // Delete the challenge
+    // Mark challenge consumed
     await supabase
       .from('link_challenges')
-      .delete()
-      .eq('handle', handle)
+      .update({ consumed: true })
+      .eq('code', code.toUpperCase().trim())
 
     return NextResponse.json({
       status: 'ok',
       server_id: server.id,
       server_key: serverKey,
-      dashboard_url: process.env.NEXT_PUBLIC_SITE_URL + '/servers/' + server.id
     })
-  } catch (error) {
+  } catch {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
