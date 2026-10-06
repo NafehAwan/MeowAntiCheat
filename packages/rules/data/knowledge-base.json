@@ -1,0 +1,2585 @@
+{
+  "$comment": "Halal Scanner knowledge base. Every entry is reviewed:false until a qualified person reviews it with the founder. Do not set reviewed:true without that review. References describe where an ingredient comes from; they are not religious rulings.",
+  "version": "2026.10.06-1",
+  "entries": [
+    {
+      "id": "pork",
+      "name": "Pork and pig products",
+      "names": {
+        "en": [
+          "pork",
+          "pig",
+          "swine",
+          "porcine",
+          "bacon",
+          "ham",
+          "gammon",
+          "prosciutto",
+          "pancetta",
+          "pork rind",
+          "pork skin",
+          "pigskin"
+        ],
+        "fr": [
+          "porc",
+          "jambon",
+          "lardons"
+        ],
+        "ar": [
+          "لحم خنزير",
+          "خنزير"
+        ],
+        "ur": [
+          "سور کا گوشت",
+          "سور"
+        ]
+      },
+      "eNumbers": [],
+      "category": "meat",
+      "defaultStatus": "haram",
+      "origins": [
+        "pig"
+      ],
+      "shortReason": "Comes from pigs, which are not halal.",
+      "explanation": "Pork and anything made from pigs (bacon, ham, gammon, etc.) is not halal according to all major schools of thought.",
+      "exceptions": [
+        "ham flavour",
+        "ham flavouring",
+        "ham flavor",
+        "ham flavoring",
+        "bacon flavour",
+        "bacon flavouring",
+        "bacon flavor",
+        "bacon flavoring",
+        "pork flavour",
+        "pork flavouring",
+        "pork flavor",
+        "pork flavoring"
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Pork",
+          "url": "https://en.wikipedia.org/wiki/Pork"
+        },
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "pork-flavouring",
+      "name": "Bacon / ham / pork flavouring",
+      "names": {
+        "en": [
+          "bacon flavour",
+          "bacon flavouring",
+          "bacon flavor",
+          "bacon flavoring",
+          "smoky bacon flavour",
+          "ham flavour",
+          "ham flavouring",
+          "ham flavor",
+          "ham flavoring",
+          "pork flavour",
+          "pork flavouring",
+          "pork flavor",
+          "pork flavoring"
+        ]
+      },
+      "eNumbers": [],
+      "category": "flavouring",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "artificial",
+        "pork"
+      ],
+      "shortReason": "Often artificial, but it can contain real pork. Check with the manufacturer.",
+      "explanation": "Bacon, ham or pork \"flavour\" is often made without meat, but some flavourings contain real pork extract or fat. The label alone usually cannot tell you which.",
+      "references": [
+        {
+          "title": "Wikipedia: Flavoring",
+          "url": "https://en.wikipedia.org/wiki/Flavoring"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "lard",
+      "name": "Lard (pork fat)",
+      "names": {
+        "en": [
+          "lard",
+          "pork fat",
+          "pig fat"
+        ],
+        "fr": [
+          "saindoux",
+          "graisse de porc"
+        ],
+        "ar": [
+          "شحم الخنزير",
+          "دهن الخنزير"
+        ]
+      },
+      "eNumbers": [],
+      "category": "animal-fat",
+      "defaultStatus": "haram",
+      "origins": [
+        "pig"
+      ],
+      "shortReason": "Fat from pigs, which is not halal.",
+      "explanation": "Lard is rendered pig fat. It is used in pastry, biscuits and some bread. It is not halal.",
+      "references": [
+        {
+          "title": "Wikipedia: Lard",
+          "url": "https://en.wikipedia.org/wiki/Lard"
+        },
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "blood",
+      "name": "Blood",
+      "names": {
+        "en": [
+          "blood",
+          "blood plasma",
+          "dried blood",
+          "blood powder",
+          "blood sausage"
+        ],
+        "ar": [
+          "دم"
+        ]
+      },
+      "eNumbers": [],
+      "category": "other",
+      "defaultStatus": "haram",
+      "origins": [
+        "animal blood"
+      ],
+      "shortReason": "Blood is not permitted to be eaten in Islam.",
+      "explanation": "Flowing blood is explicitly prohibited in the Quran. Products containing blood or blood plasma are not halal.",
+      "references": [
+        {
+          "title": "Wikipedia: Blood as food",
+          "url": "https://en.wikipedia.org/wiki/Blood_as_food"
+        },
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "alcohol",
+      "name": "Alcohol (ethanol, E1510)",
+      "names": {
+        "en": [
+          "alcohol",
+          "ethanol",
+          "ethyl alcohol"
+        ],
+        "fr": [
+          "alcool"
+        ],
+        "ar": [
+          "كحول",
+          "إيثانول"
+        ],
+        "ur": [
+          "الکحل"
+        ]
+      },
+      "eNumbers": [
+        "E1510"
+      ],
+      "category": "alcohol",
+      "defaultStatus": "haram",
+      "origins": [
+        "fermentation",
+        "synthetic"
+      ],
+      "shortReason": "Contains alcohol.",
+      "explanation": "Ethanol is the intoxicating alcohol in drinks. It is also used as a solvent or carrier in flavourings. Products listing alcohol as an ingredient are treated as not halal by the default profile.",
+      "exceptions": [
+        "sugar alcohol",
+        "sugar alcohols",
+        "alcohol free",
+        "free from alcohol",
+        "no alcohol",
+        "without alcohol",
+        "non alcoholic",
+        "cetyl alcohol",
+        "cetearyl alcohol",
+        "stearyl alcohol",
+        "benzyl alcohol"
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Ethanol",
+          "url": "https://en.wikipedia.org/wiki/Ethanol"
+        },
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "alcoholic-drinks",
+      "name": "Wine, beer and spirits",
+      "names": {
+        "en": [
+          "wine",
+          "beer",
+          "lager",
+          "stout",
+          "rum",
+          "brandy",
+          "cognac",
+          "whisky",
+          "whiskey",
+          "bourbon",
+          "vodka",
+          "gin",
+          "liqueur",
+          "liquor",
+          "sherry",
+          "port wine",
+          "champagne",
+          "prosecco",
+          "marsala",
+          "kirsch",
+          "sake",
+          "mirin",
+          "rice wine",
+          "cooking wine"
+        ],
+        "fr": [
+          "vin",
+          "biere",
+          "eau de vie"
+        ],
+        "ar": [
+          "نبيذ",
+          "خمر",
+          "بيرة"
+        ]
+      },
+      "eNumbers": [],
+      "category": "alcohol",
+      "defaultStatus": "haram",
+      "origins": [
+        "fermentation"
+      ],
+      "shortReason": "An alcoholic drink is listed as an ingredient.",
+      "explanation": "Wine, beer and spirits are intoxicating drinks. When listed as an ingredient (for example in sauces, desserts or chocolates) the default profile treats the product as not halal.",
+      "exceptions": [
+        "root beer",
+        "ginger beer",
+        "birch beer",
+        "alcohol free",
+        "non alcoholic",
+        "wine gum",
+        "wine gums"
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Alcoholic beverage",
+          "url": "https://en.wikipedia.org/wiki/Alcoholic_beverage"
+        },
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "non-alcoholic-drinks",
+      "name": "Alcohol-free beer or wine",
+      "names": {
+        "en": [
+          "non alcoholic beer",
+          "alcohol free beer",
+          "non alcoholic wine",
+          "alcohol free wine",
+          "dealcoholised wine",
+          "dealcoholized wine",
+          "de alcoholised wine",
+          "de alcoholized wine"
+        ]
+      },
+      "eNumbers": [],
+      "category": "alcohol",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "fermentation"
+      ],
+      "shortReason": "\"Alcohol-free\" drinks can still contain a small amount of alcohol (up to about 0.5%).",
+      "explanation": "Beer and wine labelled \"alcohol-free\" or \"non-alcoholic\" are usually made by removing alcohol after fermentation and may still contain a trace. Scholars differ on these products.",
+      "references": [
+        {
+          "title": "Wikipedia: Low-alcohol beer",
+          "url": "https://en.wikipedia.org/wiki/Low-alcohol_beer"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "alcohol-flavouring",
+      "name": "Rum / brandy / wine flavouring",
+      "names": {
+        "en": [
+          "rum flavour",
+          "rum flavouring",
+          "rum flavor",
+          "rum flavoring",
+          "rum aroma",
+          "brandy flavour",
+          "brandy flavouring",
+          "brandy flavor",
+          "wine flavour",
+          "wine flavouring",
+          "whisky flavour",
+          "whiskey flavor",
+          "liqueur flavour"
+        ]
+      },
+      "eNumbers": [],
+      "category": "flavouring",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "artificial",
+        "alcoholic drinks",
+        "alcohol as solvent"
+      ],
+      "shortReason": "May be made from or carried in alcohol; may also be artificial.",
+      "explanation": "Flavourings named after alcoholic drinks can be artificial, but some are made from the drink itself or dissolved in alcohol. Check with the manufacturer.",
+      "references": [
+        {
+          "title": "Wikipedia: Flavoring",
+          "url": "https://en.wikipedia.org/wiki/Flavoring"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "wine-vinegar",
+      "name": "Wine vinegar",
+      "names": {
+        "en": [
+          "wine vinegar",
+          "red wine vinegar",
+          "white wine vinegar",
+          "rice wine vinegar",
+          "sherry vinegar",
+          "balsamic vinegar",
+          "balsamic"
+        ],
+        "fr": [
+          "vinaigre de vin",
+          "vinaigre balsamique"
+        ]
+      },
+      "eNumbers": [],
+      "category": "other",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "wine"
+      ],
+      "shortReason": "Vinegar made from wine. Many scholars accept it; others avoid it.",
+      "explanation": "Wine vinegar is made by letting wine turn into vinegar. Many scholars consider it halal because the alcohol has been transformed; others avoid it, especially if it was made deliberately from wine. Scholars differ.",
+      "references": [
+        {
+          "title": "Wikipedia: Vinegar",
+          "url": "https://en.wikipedia.org/wiki/Vinegar"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "vanilla-extract",
+      "name": "Vanilla extract",
+      "names": {
+        "en": [
+          "vanilla extract",
+          "pure vanilla extract",
+          "natural vanilla extract",
+          "bourbon vanilla extract"
+        ],
+        "fr": [
+          "extrait de vanille"
+        ]
+      },
+      "eNumbers": [],
+      "category": "flavouring",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vanilla beans in alcohol"
+      ],
+      "shortReason": "Usually made with alcohol as a solvent; scholars differ on this.",
+      "explanation": "Vanilla extract is normally made by soaking vanilla beans in alcohol (often around 35%). Scholars differ on small amounts of alcohol used in processing.",
+      "references": [
+        {
+          "title": "Wikipedia: Vanilla extract",
+          "url": "https://en.wikipedia.org/wiki/Vanilla_extract"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "meat",
+      "name": "Meat (slaughter method not stated)",
+      "names": {
+        "en": [
+          "meat",
+          "beef",
+          "veal",
+          "lamb",
+          "mutton",
+          "chicken",
+          "turkey meat",
+          "turkey breast",
+          "turkey ham",
+          "duck",
+          "beef extract",
+          "chicken extract",
+          "mechanically separated chicken",
+          "meat extract"
+        ],
+        "fr": [
+          "boeuf",
+          "poulet",
+          "agneau",
+          "viande"
+        ],
+        "ar": [
+          "لحم",
+          "لحم بقر",
+          "دجاج"
+        ]
+      },
+      "eNumbers": [],
+      "category": "meat",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "animals that may not be halal-slaughtered"
+      ],
+      "shortReason": "Meat must come from a halal-slaughtered animal; the label does not say.",
+      "explanation": "Meat from permitted animals is halal only if the animal was slaughtered in the Islamic way. Unless the product is halal-certified, this cannot be confirmed from the ingredient list.",
+      "exceptions": [
+        "coconut meat",
+        "chicken egg",
+        "chicken eggs",
+        "lamb s lettuce",
+        "lambs lettuce",
+        "crab meat",
+        "meat free",
+        "meat substitute",
+        "meat alternative"
+      ],
+      "qualifiers": [
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the meat is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Dhabihah",
+          "url": "https://en.wikipedia.org/wiki/Dhabihah"
+        },
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "animal-fat",
+      "name": "Animal fat",
+      "names": {
+        "en": [
+          "animal fat",
+          "animal fats",
+          "tallow",
+          "beef tallow",
+          "suet",
+          "beef suet",
+          "beef fat",
+          "dripping",
+          "beef dripping",
+          "chicken fat",
+          "mutton fat",
+          "animal shortening"
+        ],
+        "fr": [
+          "graisse animale",
+          "suif"
+        ]
+      },
+      "eNumbers": [],
+      "category": "animal-fat",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "beef",
+        "pork",
+        "other animals"
+      ],
+      "shortReason": "Fat from animals that may not be halal-slaughtered, or may be pork.",
+      "explanation": "Animal fat can come from pigs or from animals not slaughtered in the Islamic way. Unless the source and slaughter are confirmed, it is doubtful.",
+      "qualifiers": [
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Tallow",
+          "url": "https://en.wikipedia.org/wiki/Tallow"
+        },
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "gelatin",
+      "name": "Gelatin (E441)",
+      "names": {
+        "en": [
+          "gelatin",
+          "gelatine",
+          "gelatina",
+          "gelling agent gelatine"
+        ],
+        "fr": [
+          "gelatine"
+        ],
+        "ar": [
+          "جيلاتين"
+        ],
+        "ur": [
+          "جیلیٹن"
+        ]
+      },
+      "eNumbers": [
+        "E441"
+      ],
+      "category": "protein",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "pork skin",
+        "beef hides and bones",
+        "fish"
+      ],
+      "shortReason": "Usually made from pork or non-halal beef; the source is not stated.",
+      "explanation": "Gelatin is made from animal skin and bones. Most gelatin worldwide comes from pigs; beef gelatin is halal only if the animal was halal-slaughtered; fish gelatin is generally accepted. Sweets, marshmallows, yoghurts and capsules often contain it.",
+      "qualifiers": [
+        {
+          "terms": [
+            "fish",
+            "marine"
+          ],
+          "status": "halal",
+          "reason": "Label says the gelatin is from fish, which is generally accepted."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the gelatin is from pork."
+        },
+        {
+          "terms": [
+            "beef",
+            "bovine",
+            "cow",
+            "cattle"
+          ],
+          "status": "doubtful",
+          "reason": "Beef gelatin is halal only if the animal was halal-slaughtered. Check for certification."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the gelatin is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Gelatin",
+          "url": "https://en.wikipedia.org/wiki/Gelatin"
+        },
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "collagen",
+      "name": "Collagen",
+      "names": {
+        "en": [
+          "collagen",
+          "hydrolysed collagen",
+          "hydrolyzed collagen",
+          "collagen peptides"
+        ]
+      },
+      "eNumbers": [],
+      "category": "protein",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "pork",
+        "beef",
+        "fish"
+      ],
+      "shortReason": "Made from animal skin or bones; the source is not stated.",
+      "explanation": "Collagen is extracted from animal skin and bones, often from pigs or cattle, sometimes from fish.",
+      "qualifiers": [
+        {
+          "terms": [
+            "fish",
+            "marine"
+          ],
+          "status": "halal",
+          "reason": "Label says the collagen is from fish."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the collagen is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the collagen is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Collagen",
+          "url": "https://en.wikipedia.org/wiki/Collagen"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "carmine",
+      "name": "Carmine / cochineal (E120)",
+      "names": {
+        "en": [
+          "carmine",
+          "carmines",
+          "cochineal",
+          "cochineal extract",
+          "carminic acid",
+          "crimson lake",
+          "natural red 4"
+        ],
+        "fr": [
+          "carmin",
+          "cochenille"
+        ]
+      },
+      "eNumbers": [
+        "E120"
+      ],
+      "category": "colour",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "cochineal insects"
+      ],
+      "shortReason": "Red colour made from crushed insects; scholars differ on it.",
+      "explanation": "Carmine (E120) is a red colour made from dried cochineal insects. Some schools consider insects impermissible to eat; others permit it. Found in red sweets, yoghurts and drinks.",
+      "references": [
+        {
+          "title": "Wikipedia: Carmine",
+          "url": "https://en.wikipedia.org/wiki/Carmine"
+        },
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "shellac",
+      "name": "Shellac (E904)",
+      "names": {
+        "en": [
+          "shellac",
+          "confectioner s glaze",
+          "confectioners glaze",
+          "lac resin",
+          "glazing agent shellac"
+        ]
+      },
+      "eNumbers": [
+        "E904"
+      ],
+      "category": "glazing-agent",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "lac insect secretion"
+      ],
+      "shortReason": "Glaze made from a resin secreted by lac insects; scholars differ on it.",
+      "explanation": "Shellac (E904) is a shiny coating made from a resin secreted by the lac insect. It is used on sweets, chocolates and fruit. Many scholars permit it because it is a secretion; some avoid it.",
+      "references": [
+        {
+          "title": "Wikipedia: Shellac",
+          "url": "https://en.wikipedia.org/wiki/Shellac"
+        },
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "glycerol",
+      "name": "Glycerol / glycerin (E422)",
+      "names": {
+        "en": [
+          "glycerol",
+          "glycerin",
+          "glycerine",
+          "humectant glycerol"
+        ],
+        "fr": [
+          "glycerol"
+        ]
+      },
+      "eNumbers": [
+        "E422"
+      ],
+      "category": "additive",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)",
+        "synthetic"
+      ],
+      "shortReason": "Can be made from plant oils or animal fat; the source is not stated.",
+      "explanation": "Glycerol (E422) is made from fats and oils. It is often from vegetable oils, but it can come from animal fat including pork, or be made synthetically.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the glycerol is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the glycerol is from pork."
+        },
+        {
+          "terms": [
+            "synthetic"
+          ],
+          "status": "halal",
+          "reason": "Label says the glycerol is synthetic."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the glycerol is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Glycerol",
+          "url": "https://en.wikipedia.org/wiki/Glycerol"
+        },
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e471",
+      "name": "Mono- and diglycerides of fatty acids (E471)",
+      "names": {
+        "en": [
+          "mono and diglycerides of fatty acids",
+          "mono and diglycerides of edible fatty acids",
+          "mono and di glycerides of fatty acids",
+          "mono and diglycerides",
+          "mono and di glycerides",
+          "monoglycerides and diglycerides",
+          "monoglycerides",
+          "diglycerides",
+          "mono diglycerides"
+        ]
+      },
+      "eNumbers": [
+        "E471"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Mono- and diglycerides of fatty acids (E471) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e470",
+      "name": "Salts of fatty acids (E470a, E470b)",
+      "names": {
+        "en": [
+          "salts of fatty acids",
+          "sodium salts of fatty acids",
+          "potassium salts of fatty acids",
+          "calcium salts of fatty acids",
+          "magnesium salts of fatty acids",
+          "calcium stearate"
+        ]
+      },
+      "eNumbers": [
+        "E470a",
+        "E470b"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Salts of fatty acids (E470a, E470b) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e472",
+      "name": "Esters of mono- and diglycerides (E472a–f)",
+      "names": {
+        "en": [
+          "esters of mono and diglycerides",
+          "esters of mono and diglycerides of fatty acids",
+          "acetic acid esters of mono and diglycerides",
+          "lactic acid esters of mono and diglycerides",
+          "citric acid esters of mono and diglycerides",
+          "tartaric acid esters of mono and diglycerides",
+          "mono and diacetyl tartaric acid esters of mono and diglycerides",
+          "mono and diacetyltartaric acid esters of mono and diglycerides",
+          "diacetyl tartaric acid esters of mono and diglycerides",
+          "datem"
+        ]
+      },
+      "eNumbers": [
+        "E472",
+        "E472a",
+        "E472b",
+        "E472c",
+        "E472d",
+        "E472e",
+        "E472f"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Esters of mono- and diglycerides (E472a–f) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e473",
+      "name": "Sucrose esters of fatty acids (E473)",
+      "names": {
+        "en": [
+          "sucrose esters of fatty acids",
+          "sucrose esters"
+        ]
+      },
+      "eNumbers": [
+        "E473"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Sucrose esters of fatty acids (E473) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e474",
+      "name": "Sucroglycerides (E474)",
+      "names": {
+        "en": [
+          "sucroglycerides"
+        ]
+      },
+      "eNumbers": [
+        "E474"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Sucroglycerides (E474) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e475",
+      "name": "Polyglycerol esters of fatty acids (E475)",
+      "names": {
+        "en": [
+          "polyglycerol esters of fatty acids"
+        ]
+      },
+      "eNumbers": [
+        "E475"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Polyglycerol esters of fatty acids (E475) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e476",
+      "name": "Polyglycerol polyricinoleate (E476)",
+      "names": {
+        "en": [
+          "polyglycerol polyricinoleate",
+          "pgpr"
+        ]
+      },
+      "eNumbers": [
+        "E476"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Polyglycerol polyricinoleate (E476, PGPR) is made from castor oil and glycerol. The castor oil is plant-based, but the glycerol part can come from plant or animal fat. Mostly used in chocolate.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e477",
+      "name": "Propylene glycol esters of fatty acids (E477)",
+      "names": {
+        "en": [
+          "propane 1 2 diol esters of fatty acids",
+          "propylene glycol esters of fatty acids"
+        ]
+      },
+      "eNumbers": [
+        "E477"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Propylene glycol esters of fatty acids (E477) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e481",
+      "name": "Stearoyl lactylates (E481, E482)",
+      "names": {
+        "en": [
+          "sodium stearoyl 2 lactylate",
+          "sodium stearoyl lactylate",
+          "calcium stearoyl 2 lactylate",
+          "calcium stearoyl lactylate",
+          "stearoyl lactylate"
+        ]
+      },
+      "eNumbers": [
+        "E481",
+        "E482"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Stearoyl lactylates (E481, E482) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e491",
+      "name": "Sorbitan esters (E491–E495)",
+      "names": {
+        "en": [
+          "sorbitan monostearate",
+          "sorbitan tristearate",
+          "sorbitan monolaurate",
+          "sorbitan monooleate",
+          "sorbitan monopalmitate"
+        ]
+      },
+      "eNumbers": [
+        "E491",
+        "E492",
+        "E493",
+        "E494",
+        "E495"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Sorbitan esters (E491–E495) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "polysorbates",
+      "name": "Polysorbates (E432–E436)",
+      "names": {
+        "en": [
+          "polysorbate"
+        ]
+      },
+      "eNumbers": [
+        "E432",
+        "E433",
+        "E434",
+        "E435",
+        "E436"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Polysorbates (E432–E436) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e570",
+      "name": "Stearic acid (E570)",
+      "names": {
+        "en": [
+          "stearic acid",
+          "octadecanoic acid"
+        ]
+      },
+      "eNumbers": [
+        "E570"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Stearic acid (E570) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e572",
+      "name": "Magnesium stearate (E572)",
+      "names": {
+        "en": [
+          "magnesium stearate",
+          "magnesium salts of fatty acids"
+        ]
+      },
+      "eNumbers": [
+        "E572"
+      ],
+      "category": "emulsifier",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "vegetable oils",
+        "animal fat (including pork)"
+      ],
+      "shortReason": "Made from fats that can be plant or animal (including pork); the source is not stated.",
+      "explanation": "Magnesium stearate (E572) is made from fatty acids. These are usually from vegetable oils such as palm or soy, but can come from animal fat, including pork fat. Unless the label or the manufacturer confirms a plant or halal source, the origin is unknown.",
+      "qualifiers": [
+        {
+          "terms": [
+            "vegetable",
+            "vegetables",
+            "plant",
+            "plant based",
+            "plant origin",
+            "vegetable origin",
+            "vegetable oil",
+            "vegetable oils",
+            "palm",
+            "palm oil",
+            "rapeseed",
+            "sunflower",
+            "soy",
+            "soya",
+            "coconut",
+            "non animal"
+          ],
+          "status": "halal",
+          "reason": "Label says the fat source is from plants."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the fat source is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the ingredient is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "e542",
+      "name": "Edible bone phosphate (E542)",
+      "names": {
+        "en": [
+          "edible bone phosphate",
+          "bone phosphate",
+          "bone meal"
+        ]
+      },
+      "eNumbers": [
+        "E542"
+      ],
+      "category": "additive",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "animal bones (may include pork)"
+      ],
+      "shortReason": "Made from animal bones; the animal and slaughter are not stated.",
+      "explanation": "Edible bone phosphate (E542) is made from animal bones, which may come from pigs or from animals not slaughtered in the Islamic way.",
+      "qualifiers": [
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the bone phosphate is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the bone phosphate is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        },
+        {
+          "title": "Wikipedia: E number",
+          "url": "https://en.wikipedia.org/wiki/E_number"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "flavour-enhancers-ribonucleotides",
+      "name": "Inosinate / guanylate flavour enhancers (E627, E631, E635)",
+      "names": {
+        "en": [
+          "disodium inosinate",
+          "disodium guanylate",
+          "disodium 5 ribonucleotides",
+          "disodium ribonucleotides",
+          "calcium 5 ribonucleotides"
+        ]
+      },
+      "eNumbers": [
+        "E627",
+        "E631",
+        "E635"
+      ],
+      "category": "additive",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "microbial fermentation",
+        "meat",
+        "fish"
+      ],
+      "shortReason": "Usually made by fermentation, but can be made from meat or fish.",
+      "explanation": "These flavour enhancers are mostly produced by fermentation today, but they can be extracted from meat (including pork) or fish. The label usually does not say which.",
+      "qualifiers": [
+        {
+          "terms": [
+            "microbial",
+            "vegetable",
+            "vegetarian",
+            "non animal",
+            "fungal",
+            "bacterial",
+            "plant",
+            "fermentation",
+            "fermented"
+          ],
+          "status": "halal",
+          "reason": "Label says the flavour enhancer is microbial or plant-based."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the flavour enhancer is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the flavour enhancer is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Disodium inosinate",
+          "url": "https://en.wikipedia.org/wiki/Disodium_inosinate"
+        },
+        {
+          "title": "Wikipedia: Disodium guanylate",
+          "url": "https://en.wikipedia.org/wiki/Disodium_guanylate"
+        },
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "l-cysteine",
+      "name": "L-cysteine / L-cystine (E920, E921)",
+      "names": {
+        "en": [
+          "l cysteine",
+          "cysteine",
+          "l cysteine hydrochloride",
+          "cysteine hydrochloride",
+          "l cystine",
+          "cystine"
+        ]
+      },
+      "eNumbers": [
+        "E920",
+        "E921"
+      ],
+      "category": "additive",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "duck feathers",
+        "pig bristles",
+        "human hair",
+        "synthetic / fermentation"
+      ],
+      "shortReason": "Can be made from feathers, pig bristles or human hair; the source is not stated.",
+      "explanation": "L-cysteine (E920) is a flour treatment agent used in some bread and baked goods. It can be extracted from duck feathers, pig bristles or human hair, or made by fermentation.",
+      "qualifiers": [
+        {
+          "terms": [
+            "synthetic",
+            "microbial",
+            "fermentation",
+            "fermented",
+            "vegetable",
+            "plant"
+          ],
+          "status": "halal",
+          "reason": "Label says it is synthetic or made by fermentation."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the L-cysteine is from pork."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Cysteine",
+          "url": "https://en.wikipedia.org/wiki/Cysteine"
+        },
+        {
+          "title": "UK Food Standards Agency: Approved additives and E numbers",
+          "url": "https://www.food.gov.uk/business-guidance/approved-additives-and-e-numbers"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "natural-flavourings",
+      "name": "Natural flavouring",
+      "names": {
+        "en": [
+          "natural flavour",
+          "natural flavor",
+          "natural flavouring",
+          "natural flavoring",
+          "natural flavouring substances",
+          "natural flavoring substances"
+        ],
+        "fr": [
+          "arome naturel",
+          "aromes naturels"
+        ],
+        "ar": [
+          "نكهة طبيعية"
+        ]
+      },
+      "eNumbers": [],
+      "category": "flavouring",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "plants",
+        "animals",
+        "alcohol as a carrier"
+      ],
+      "shortReason": "Source is not stated. Natural flavourings can be animal-derived or carried in alcohol.",
+      "explanation": "\"Natural flavouring\" can come from plants or animals, and flavourings are often dissolved in alcohol. Without more detail from the manufacturer, the source cannot be confirmed.",
+      "qualifiers": [
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the flavouring is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Flavoring",
+          "url": "https://en.wikipedia.org/wiki/Flavoring"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "enzymes",
+      "name": "Enzymes",
+      "names": {
+        "en": [
+          "enzyme",
+          "enzymes",
+          "animal enzymes"
+        ],
+        "fr": [
+          "enzymes"
+        ],
+        "ar": [
+          "إنزيمات"
+        ]
+      },
+      "eNumbers": [],
+      "category": "enzyme",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "microbes",
+        "plants",
+        "animals (including pigs)"
+      ],
+      "shortReason": "Enzymes can come from animals, including pigs; the source is not stated.",
+      "explanation": "Enzymes are used in cheese, bread and many processed foods. Many are made by microbes, but some come from animals, including pigs.",
+      "qualifiers": [
+        {
+          "terms": [
+            "microbial",
+            "vegetable",
+            "vegetarian",
+            "non animal",
+            "fungal",
+            "bacterial",
+            "plant",
+            "fermentation",
+            "fermented"
+          ],
+          "status": "halal",
+          "reason": "Label says the enzyme is microbial or plant-based."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the enzyme is from pork."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Enzyme",
+          "url": "https://en.wikipedia.org/wiki/Enzyme"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "animal-enzymes",
+      "name": "Pepsin / lipase / trypsin",
+      "names": {
+        "en": [
+          "pepsin",
+          "lipase",
+          "trypsin",
+          "pancreatin"
+        ]
+      },
+      "eNumbers": [],
+      "category": "enzyme",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "pig stomach or pancreas",
+        "calves",
+        "microbes"
+      ],
+      "shortReason": "Often taken from pigs or calves; the source is not stated.",
+      "explanation": "Pepsin, lipase, trypsin and pancreatin are digestive enzymes. Commercial pepsin and pancreatin are usually from pigs; lipase can be animal or microbial.",
+      "qualifiers": [
+        {
+          "terms": [
+            "microbial",
+            "vegetable",
+            "vegetarian",
+            "non animal",
+            "fungal",
+            "bacterial",
+            "plant",
+            "fermentation",
+            "fermented"
+          ],
+          "status": "halal",
+          "reason": "Label says the enzyme is microbial or plant-based."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the enzyme is from pork."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Pepsin",
+          "url": "https://en.wikipedia.org/wiki/Pepsin"
+        },
+        {
+          "title": "Wikipedia: Lipase",
+          "url": "https://en.wikipedia.org/wiki/Lipase"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "rennet",
+      "name": "Rennet",
+      "names": {
+        "en": [
+          "rennet",
+          "animal rennet",
+          "calf rennet",
+          "chymosin"
+        ],
+        "fr": [
+          "presure"
+        ],
+        "ar": [
+          "منفحة"
+        ]
+      },
+      "eNumbers": [],
+      "category": "enzyme",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "calf stomach",
+        "pig stomach",
+        "microbes",
+        "plants"
+      ],
+      "shortReason": "Animal rennet comes from calves that may not be halal-slaughtered; the source is not stated.",
+      "explanation": "Rennet is used to make cheese. Animal rennet is taken from the stomach of calves (sometimes pigs). Microbial and vegetable rennet are widely accepted.",
+      "qualifiers": [
+        {
+          "terms": [
+            "microbial",
+            "vegetable",
+            "vegetarian",
+            "non animal",
+            "fungal",
+            "bacterial",
+            "plant",
+            "fermentation",
+            "fermented"
+          ],
+          "status": "halal",
+          "reason": "Label says the rennet is microbial or plant-based."
+        },
+        {
+          "terms": [
+            "pork",
+            "porcine",
+            "pig",
+            "pigs",
+            "pigskin",
+            "swine"
+          ],
+          "status": "haram",
+          "reason": "Label says the rennet is from pork."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the rennet is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Rennet",
+          "url": "https://en.wikipedia.org/wiki/Rennet"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "whey",
+      "name": "Whey",
+      "names": {
+        "en": [
+          "whey",
+          "whey powder",
+          "whey protein",
+          "whey protein concentrate",
+          "whey protein isolate",
+          "sweet whey",
+          "sweet whey powder",
+          "demineralised whey",
+          "demineralized whey",
+          "whey permeate"
+        ],
+        "fr": [
+          "lactoserum",
+          "petit lait"
+        ],
+        "ar": [
+          "مصل اللبن"
+        ]
+      },
+      "eNumbers": [],
+      "category": "dairy",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "cheese-making (may use animal rennet)"
+      ],
+      "shortReason": "A by-product of cheese-making, which may use animal rennet.",
+      "explanation": "Whey is left over from making cheese. If the cheese was made with animal rennet from a non-halal source, some scholars consider the whey doubtful; others permit it. Scholars differ.",
+      "qualifiers": [
+        {
+          "terms": [
+            "microbial",
+            "vegetable",
+            "vegetarian",
+            "non animal",
+            "fungal",
+            "bacterial",
+            "plant",
+            "fermentation",
+            "fermented"
+          ],
+          "status": "halal",
+          "reason": "Label says the rennet used is microbial or plant-based."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the whey is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Whey",
+          "url": "https://en.wikipedia.org/wiki/Whey"
+        },
+        {
+          "title": "Wikipedia: Rennet",
+          "url": "https://en.wikipedia.org/wiki/Rennet"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "cheese",
+      "name": "Cheese",
+      "names": {
+        "en": [
+          "cheese",
+          "cheese powder",
+          "cheddar",
+          "parmesan",
+          "mozzarella",
+          "edam",
+          "gouda",
+          "emmental",
+          "gruyere",
+          "pecorino",
+          "grana padano",
+          "parmigiano reggiano"
+        ],
+        "fr": [
+          "fromage"
+        ],
+        "ar": [
+          "جبن"
+        ]
+      },
+      "eNumbers": [],
+      "category": "dairy",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "milk with animal or microbial rennet"
+      ],
+      "shortReason": "Cheese may be made with animal rennet; the rennet type is not stated.",
+      "explanation": "Many cheeses are made with animal rennet from calves that may not be halal-slaughtered. Cheese made with microbial or vegetable rennet (often marked \"suitable for vegetarians\") is widely accepted. Parmesan and Grana Padano are traditionally made with animal rennet.",
+      "qualifiers": [
+        {
+          "terms": [
+            "microbial",
+            "vegetable",
+            "vegetarian",
+            "non animal",
+            "fungal",
+            "bacterial",
+            "plant",
+            "fermentation",
+            "fermented"
+          ],
+          "status": "halal",
+          "reason": "Label says the rennet used is microbial or plant-based."
+        },
+        {
+          "terms": [
+            "halal",
+            "zabiha",
+            "zabihah",
+            "dhabiha"
+          ],
+          "status": "halal",
+          "reason": "Label says the cheese is halal. Check the certification logo."
+        }
+      ],
+      "references": [
+        {
+          "title": "Wikipedia: Cheese",
+          "url": "https://en.wikipedia.org/wiki/Cheese"
+        },
+        {
+          "title": "Wikipedia: Rennet",
+          "url": "https://en.wikipedia.org/wiki/Rennet"
+        }
+      ],
+      "reviewed": false
+    },
+    {
+      "id": "shellfish",
+      "name": "Shellfish and non-fish seafood",
+      "names": {
+        "en": [
+          "prawn",
+          "shrimp",
+          "crab",
+          "crab meat",
+          "lobster",
+          "crayfish",
+          "langoustine",
+          "mussel",
+          "oyster",
+          "clam",
+          "scallop",
+          "squid",
+          "octopus",
+          "calamari"
+        ],
+        "ar": [
+          "روبيان",
+          "جمبري"
+        ]
+      },
+      "eNumbers": [],
+      "category": "seafood",
+      "defaultStatus": "doubtful",
+      "origins": [
+        "sea creatures other than fish"
+      ],
+      "shortReason": "Most scholars consider seafood halal, but the Hanafi school differs on many non-fish sea creatures.",
+      "explanation": "The majority of scholars consider all seafood halal. In the Hanafi school, only fish is clearly permitted and scholars differ on prawns and shrimp; other shellfish are generally avoided. Shown as doubtful in the default conservative profile.",
+      "references": [
+        {
+          "title": "Wikipedia: Islamic dietary laws",
+          "url": "https://en.wikipedia.org/wiki/Islamic_dietary_laws"
+        }
+      ],
+      "reviewed": false
+    }
+  ]
+}
