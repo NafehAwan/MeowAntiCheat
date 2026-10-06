@@ -128,11 +128,21 @@ HyperFrames (open source, by HeyGen) renders HTML/CSS/GSAP compositions to MP4. 
 
 ## Progress log
 
-- [ ] M0 setup
-- [ ] M1 core scan + closed test started (date: ____)
+- [ ] M0 setup: code done (Expo SDK 57, expo-router, TypeScript, EAS profiles, npm workspaces). Still needed: founder runs `eas init` and the first dev build on their phone (see README).
+- [ ] M1 core scan + closed test started (date: ____): code done (barcode → Open Food Facts with cache → rules engine → verdict screen with badge, flagged list, "why", certification shown separately, disclaimer). Rules engine has 40 seed entries (all `reviewed: false`) and 136 unit tests. Still needed: test on a real phone, first closed-test upload, recruit 15–20 testers.
 - [ ] M2 label photo
 - [ ] M3 monetization
 - [ ] M4 polish + store assets + knowledge base reviewed
 - [ ] M5 production launch + content push
 
-Next 3 tasks: (fill in)
+Notes (2026-10-06):
+- Old MeowAntiCheat files were removed from the repo; they remain in git history.
+- `android.package` is set to `com.nafehawan.halalscanner`. The founder must confirm it before the first Play upload, because it can't change afterwards.
+- Set `extra.offContactEmail` in `app/app.json`. Open Food Facts wants a contact address in the User-Agent.
+- The `closed-test` and `development` profiles show unreviewed entries with their status plus a "test build" banner. `production` shows every unreviewed entry as doubtful.
+- Open Food Facts v2 response handling was written without live access to their docs or API (this sandbox's network blocks them). Check it on a real phone.
+
+Next 3 tasks:
+1. Founder: `eas init`, dev build on phone, scan 10+ real products and note wrong or confusing verdicts.
+2. First `closed-test` build → Play Console closed testing track; start recruiting 15–20 testers (the 14-day clock).
+3. M2: Supabase edge function for label-photo extraction (LLM returns ingredients only) + per-device rate limit + photo flow.
